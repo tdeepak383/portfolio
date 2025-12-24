@@ -1,11 +1,16 @@
 import React from 'react'
 import './App.css'
+import { Outlet } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-4xl font-bold'>Deepak Kumar Portfolio Coming Soon...</h1>
+      <Header/>
+      <Outlet/>
+      <Footer/>
     </>
   )
 }

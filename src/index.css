@@ -16,6 +16,10 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+
+.section-gradient{
+    background-image: linear-gradient(to right, var(--accent-gradient1) , var(--accent-gradient2));
+}
 .gradient{
     background-image: linear-gradient(to right, var(--accent-gradient1) , var(--accent-gradient2));
 }
@@ -47,14 +51,17 @@ body::-webkit-scrollbar-thumb:active{
     transition: all 0.3s ease-in-out;
 }
 
-.marquee div {
-  display: block;
-  width: 200%;
-  height: 30px;
-
-  position: absolute;
-  overflow: hidden;
-
-  animation: marquee 5s linear infinite;
+.card-border-hover:hover{
+    border-top: 1px solid transparent;
+    border-left: 1px solid var(--accent-gradient1);
+    border-right: 1px solid var(--accent-gradient2);
+    border-bottom: 1px solid transparent;
+    
 }
-
+.card-border{
+    border-top: 1px solid transparent;
+    border-left: 1px solid var(--accent-gradient1);
+    border-right: 1px solid var(--accent-gradient1);
+    border-bottom: 1px solid transparent;
+    
+}

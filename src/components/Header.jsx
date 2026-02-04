@@ -1,27 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
+
+  const navItems = [
+    {label: "Projects", id: "projects"},
+    {label: "Skills", id: "skills"},
+    {label: "Education", id: "education"},
+    {label: "Work Experience", id: "work-experience"},
+    {label: "Contact", id: "contact"}
+  ]
 
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 20);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const headerOffset = 10; // height of header
+    const elementPosition = section.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <header className="bg-[var(--accent-primary)] text-white py-4 px-6 lg:px-16 sticky top-0 w-full z-50 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <nav className="hidden md:flex gap-8 text-sm font-medium">
-          <a href="#home" className="hover:text-[var(--accent-gradient2)] transition">Home</a>
-          <a href="#projects" className="hover:text-[var(--accent-gradient2)] transition">Projects</a>
-          <a href="#skills" className="hover:text-[var(--accent-gradient2)] transition">Skills</a>
-          <a href="#education" className="hover:text-[var(--accent-gradient2)] transition">Education</a>
-          <a href="#work" className="hover:text-[var(--accent-gradient2)] transition">Work Experience</a>
-          <a href="#contact" className="hover:text-[var(--accent-gradient2)] transition">Contact Me</a>
+          <a href="/" className="hover:text-[var(--accent-gradient2)] transition">Home</a>
+          {navItems.map((item, index) => (
+            <button
+            key={index}
+            className="hover:text-[var(--accent-gradient2)] transition-all"
+            onClick={() => scrollToSection(item.id)}
+            >{item.label}</button>
+          ))}
         </nav>
         <div className="md:block">
-          <button className="gradient px-5 py-2 rounded-full font-medium text-[var(--accent-primary)] transition">
+          <a href="/Resume.pdf" target="_blank" className="gradient px-5 py-2 rounded-full font-medium text-[var(--accent-primary)] transition">
             Download CV
-          </button>
+          </a>
         </div>
         <div className="md:hidden">
           {/* Mobile menu button (if required) */}
@@ -33,14 +67,16 @@ const Header = () => {
         </div>
       </div>
        {isOpen && (
-        <div className="md:hidden bg-[var(--accent-primary)] py-4 px-6 space-y-4 text-sm font-medium">
-          <a href="#home" className="block hover:text-[var(--accent-gradient2)] transition">Home</a>
-          <a href="#services" className="block hover:text-[var(--accent-gradient2)] transition">Services</a>
-          <a href="#about" className="block hover:text-[var(--accent-gradient2)] transition">About</a>
-          <a href="#projects" className="block hover:text-[var(--accent-gradient2)] transition">Projects</a>
-          <a href="#pricing" className="block hover:text-[var(--accent-gradient2)] transition">Pricing</a>
-          <a href="#contact" className="block hover:text-[var(--accent-gradient2)] transition">Contact</a>
-          <button className="mt-4 w-full bg-[var(--accent-gradient2)] px-5 py-2 rounded-full font-medium text-white hover:bg-[#059669] transition">
+        <div className="md:hidden bg-[var(--accent-primary)] flex flex-col py-4 px-6 space-y-4 text-sm font-medium">
+          <a href="/" className="hover:text-[var(--accent-gradient2)] text-center transition-all">Home</a>
+          {navItems.map((item, index) => (
+            <button
+            key={index}
+            className="hover:text-[var(--accent-gradient2)] transition-all"
+            onClick={() => scrollToSection(item.id)}
+            >{item.label}</button>
+          ))}
+          <button className="mt-4 w-full bg-gradient-to-r hover:bg-gradient-to-l from-[var(--accent-gradient1)] to-[var(--accent-gradient2)] text-[var(--accent-dark)] px-5 py-2 rounded-full font-medium transition-all">
             Let's Talk
           </button>
         </div>

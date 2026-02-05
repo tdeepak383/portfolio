@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 
 const ContactForm = () => {
 
+const formRef = useRef();
+
+const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_mq8xrqh",
+        "template_kg5f9ch",
+        formRef.current,
+        "i6gMK6QVeNZT4v_JL"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error(error);
+          alert("Something went wrong. Please try again.");
+        }
+      );
+  };
 
   return (
     <section className="">
@@ -23,24 +48,25 @@ const ContactForm = () => {
         </p>
 
         {/* Form */}
-        <form className="space-y-6">
+        <form className="space-y-6" ref={formRef} onSubmit={sendEmail}>
           
           {/* Row 1 */}
           <div className="grid md:grid-cols-2 gap-6">
-            <Input placeholder="First Name" />
-            <Input placeholder="Last Name" />
+            <Input placeholder="Full Name" name="name"/>
+            <Input placeholder="Email" type="email" name="email"/>
           </div>
 
           {/* Row 2 */}
           <div className="grid md:grid-cols-2 gap-6">
-            <Input placeholder="Email" type="email" />
-            <Input placeholder="Phone Number" type="tel" />
+            <Input placeholder="Phone Number" type="tel" name="phone"/>
+            <Input placeholder="Subject" type="text" name="subject"/>
           </div>
 
           {/* Message */}
           <textarea
             rows="6"
             placeholder="Message"
+            name="message"
             className="
               w-full
               bg-[#284748]
@@ -82,10 +108,12 @@ const ContactForm = () => {
   );
 };
 
-const Input = ({ placeholder, type = "text" }) => {
+const Input = ({ placeholder, type = "text", name }) => {
   return (
     <input
       type={type}
+      required
+      name={name}
       placeholder={placeholder}
       className="
         w-full

@@ -5,8 +5,7 @@ import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import dot from '../assets/icon-sub-heading.svg'
-
-
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -36,20 +35,49 @@ const projects = [
 ];
 
 const Projects = () => {
+
+  const headingContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const headingItem = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
   return (
     <section className="bg-[var(--accent-primary)] text-white py-20 px-6 md:px-16" id="projects">
       <div className="max-w-7xl mx-auto ">
-        <div className="flex items-center gap-2 mb-3">
-          <img src={dot} alt="" />
-          <h1 className="text-sm font-semibold">Built on experience. Driven by innovation.</h1>
-        </div>
-        <h2 className="text-4xl md:text-6xl font-bold mb-6 textbg">
-          My Projects
-        </h2>
+        <motion.div 
+          variants={headingContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div variants={headingItem} className="flex items-center gap-2 mb-3">
+            <img src={dot} alt="" />
+            <h1 className="text-sm font-semibold">Built on experience. Driven by innovation.</h1>
+          </motion.div>
+          <motion.h2 variants={headingItem} className="text-4xl md:text-6xl font-bold mb-6 textbg">
+            My Projects
+          </motion.h2>
 
-        <p className="mb-12 max-w-xl">
-          Take a look at some of the design and development projects we've brought to life.
-        </p>
+          <motion.p variants={headingItem} className="mb-12 max-w-xl">
+            Take a look at some of the design and development projects we've brought to life.
+          </motion.p>
+        </motion.div>
 
         <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-8">
           {projects.map((project, index) => (

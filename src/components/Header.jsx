@@ -41,7 +41,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[var(--accent-primary)] text-white py-5 px-6 lg:px-16 sticky top-0 w-full z-50 shadow-lg">
+    <header className="bg-[var(--accent-primary)] text-white py-5 px-6 lg:px-16 sticky top-0 w-full z-50 shadow-lg shadow-[var(--accent-dark)]">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <nav className="hidden md:flex gap-8 text-sm font-medium">
           {/* <a href="/" className="hover:text-[var(--accent-gradient2)] transition">Home</a> */}

@@ -26,7 +26,7 @@ function Contact() {
                       </div>
                       <div>
                           <h4>Email Me At</h4>
-                          <p className='text-lg font-bold'>tdeepak383@gmail.com</p>
+                          <p className='text-lg font-bold'><a href="mailto:tdeepak383@gmail.com">tdeepak383@gmail.com</a></p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 py-5 border-b border-[var(--accent-dark)]">
@@ -35,7 +35,7 @@ function Contact() {
                       </div>
                       <div>
                           <h4>Phone Number</h4>
-                          <p className='text-lg font-bold'>+91 7078136062</p>
+                          <p className='text-lg font-bold'><a href="tel:+917078136062">+91 7078136062</a></p>
                       </div>
                     </div>
                 </div>

@@ -65,3 +65,8 @@ body::-webkit-scrollbar-thumb:active{
     border-bottom: 1px solid transparent;
     
 }
+
+/* body {
+  cursor: none;
+} */
+

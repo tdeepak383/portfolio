@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const Header = () => {
 
   const navItems = [
+    {label: "Home", id: "home"},
     {label: "Projects", id: "projects"},
     {label: "Skills", id: "skills"},
     {label: "Education", id: "education"},
@@ -29,7 +30,7 @@ const Header = () => {
     const section = document.getElementById(id);
     if (!section) return;
 
-    const headerOffset = 10; // height of header
+    const headerOffset = 50; // height of header
     const elementPosition = section.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -40,10 +41,10 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[var(--accent-primary)] text-white py-4 px-6 lg:px-16 sticky top-0 w-full z-50 shadow-lg">
+    <header className="bg-[var(--accent-primary)] text-white py-5 px-6 lg:px-16 sticky top-0 w-full z-50 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <nav className="hidden md:flex gap-8 text-sm font-medium">
-          <a href="/" className="hover:text-[var(--accent-gradient2)] transition">Home</a>
+          {/* <a href="/" className="hover:text-[var(--accent-gradient2)] transition">Home</a> */}
           {navItems.map((item, index) => (
             <button
             key={index}
@@ -53,7 +54,7 @@ const Header = () => {
           ))}
         </nav>
         <div className="md:block">
-          <a href="/Resume.pdf" target="_blank" className="gradient px-5 py-2 rounded-full font-medium text-[var(--accent-primary)] transition">
+          <a href="/Resume.pdf" target="_blank" className="px-5 py-3 rounded-full font-medium bg-gradient-to-r hover:bg-gradient-to-l from-[var(--accent-gradient1)] to-[var(--accent-gradient2)] text-[var(--accent-primary)] transition-all delay-500 duration-500">
             Download CV
           </a>
         </div>
@@ -68,7 +69,7 @@ const Header = () => {
       </div>
        {isOpen && (
         <div className="md:hidden bg-[var(--accent-primary)] flex flex-col py-4 px-6 space-y-4 text-sm font-medium">
-          <a href="/" className="hover:text-[var(--accent-gradient2)] text-center transition-all">Home</a>
+          {/* <a href="/" className="hover:text-[var(--accent-gradient2)] text-center transition-all">Home</a> */}
           {navItems.map((item, index) => (
             <button
             key={index}

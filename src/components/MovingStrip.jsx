@@ -1,5 +1,5 @@
 import React from "react";
-
+import star from '../assets/star-icon.svg'
 function MovingStrip() {
   const skills = [
     "React.Js",
@@ -17,6 +17,9 @@ function MovingStrip() {
     "Bootstrap",
     "Tailwind CSS",
     "Material UI",
+    "GSAP",
+    "SEO",
+    "AI Tools",
     "Figma",
     "Github",
     "Github Pages",
@@ -36,10 +39,12 @@ function MovingStrip() {
         {[...skills, ...skills].map((skill, index) => (
           <span
             key={index}
-            className="mx-6 text-lg font-semibold"
+            className="mx-6 uppercase text-xl font-semibold flex items-center gap-6"
           >
             {skill}
+            <img src={star} alt="" className="w-5"/>
           </span>
+          
         ))}
       </div>
     </div>

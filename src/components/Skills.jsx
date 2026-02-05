@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import dot from '../assets/icon-sub-heading.svg'
 
 const skillsData = [
   { name: "React.Js", level: 70 },
@@ -12,7 +13,9 @@ const skillsData = [
   { name: "Bootstrap", level: 80 },
   { name: "Tailwind CSS", level: 80 },
   { name: "Figma", level: 60 },
-  { name: "Material UI", level: 80 },
+  { name: "Material UI", level: 70 },
+  { name: "GSAP", level: 60 },
+  { name: "SEO", level: 80 },
 ];
 
 function Skills() {
@@ -28,12 +31,15 @@ function Skills() {
 
   return (
     <section className="bg-[var(--accent-dark)] text-white py-20 px-6 md:px-16" id='skills'>
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4 textbg">
-          My Development Skills
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-2 mb-3">
+          <img src={dot} alt="" />
+          <h1 className="text-sm font-semibold">Clean code. Smart solutions.</h1>
+        </div>
+        <h2 className="text-4xl md:text-6xl font-bold mb-6 textbg">
+          Development Skills
         </h2>
-
-        <p className="mb-12 max-w-xl mx-auto">
+        <p className="mb-12 max-w-xl">
           Crafting scalable, high-performance web experiences with modern technologies.
         </p>
 
@@ -54,7 +60,7 @@ function Skills() {
               </div>
 
               {/* Progress bar */}
-              <div className="w-full h-3 bg-[var(--accent-dark)] rounded-full overflow-hidden">
+              <div className="w-full h-3 bg-[var(--accent-primary)] rounded-full overflow-hidden">
                 <div
                   className="
                     h-full

@@ -5,8 +5,8 @@
 
 :root{
     --accent-primary: rgb(22,48,49);
-    --accent-gradient1: rgb(240,255,108);
-    --accent-gradient2: rgb(107,253,217);
+    --accent-gradient2: rgb(240,255,108);
+    --accent-gradient1: rgb(107,253,217);
     --accent-dark: rgb(43,67,68);
     --accent-light: rgb(255,255,255);
     --accent-hover: rgb(16 185 129);
@@ -31,12 +31,12 @@ body {
 }
 
 body::-webkit-scrollbar{
-    width: 12px;
-    background-color: var(--accent-dark);
+    width: 7px;
+    background-color: #f8f8f8;
 }
 body::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(to bottom, var(--accent-gradient1) , var(--accent-gradient2));
-    border-radius: 10px;
+    background-image: linear-gradient(to bottom, var(--accent-gradient2) , var(--accent-gradient1));
+   
 }
 body::-webkit-scrollbar-thumb:active{
     background-image: linear-gradient(to top, var(--accent-gradient1) , var(--accent-gradient2));
@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:active{
 
 .textbg{
     background: linear-gradient(to right, var(--accent-gradient1) , var(--accent-gradient2));
-    background-size: 200% auto;
+    background-size: 100%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease-in-out;

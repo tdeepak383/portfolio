@@ -1,19 +1,21 @@
 import React from "react";
 import deepakImg from '../assets/deepak.png'
 import dot from '../assets/icon-sub-heading.svg'
+import { GoPlay } from "react-icons/go";
+
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-dark)] text-white py-20 px-6 lg:px-16">
+    <section className="bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-dark)] text-white py-20 px-6 lg:px-16" id="home">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
           <div className="flex items-center gap-2 mb-3">
             <img src={dot} alt="" />
-            <h1 className="text-sm font-semibold textbg">Your Vision, My Development Expertise</h1>
+            <h1 className="text-sm font-semibold">Your Vision, My Development Expertise</h1>
           </div>
-          <h1 className="text-4xl  md:text-6xl max-sm:text-3xl font-semibold leading-tight md:mb-3">
+          <h1 className="text-4xl textbg md:text-6xl max-sm:text-3xl font-semibold leading-tight md:mb-3">
             I'm Deepak Kumar,
           </h1>
-          <h1 className="text-3xl textbg md:text-4xl max-sm:text-2xl font-semibold mb-6">
+          <h1 className="text-3xl md:text-4xl max-sm:text-2xl font-semibold mb-6">
            [ Frontend Developer ]
           </h1>
           <p className="text-gray-300 mb-6">
@@ -21,7 +23,7 @@ const HeroSection = () => {
           </p>
           <div className="flex gap-4">
             <button className="bg-gradient-to-r hover:bg-gradient-to-l from-[var(--accent-gradient1)] to-[var(--accent-gradient2)] text-[var(--accent-dark)] px-6 py-3 rounded-full font-medium">Let's Talk</button>
-            <button className="border border-white card-border-hover transition-all duration-500 px-6 py-3 rounded-full font-medium">Watch Intro</button>
+            <button className="card-border-hover px-5 rounded-full font-medium flex items-center gap-3"><GoPlay className="text-4xl text-[var(--accent-gradient1)]"/> Watch Intro</button>
           </div>
         </div>
         <div className="flex justify-center md:justify-center">

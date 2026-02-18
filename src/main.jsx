@@ -11,7 +11,10 @@ const router = createBrowserRouter(
       <Route path='' element={<Home/>} />
 
     </Route>
-  )
+  ),
+  {
+    basename: "/portfolio"
+  }
 )
 
 createRoot(document.getElementById('root')).render(

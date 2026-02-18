@@ -54,7 +54,7 @@ const Header = () => {
           ))}
         </nav>
         <div className="md:block">
-          <a href="/Resume.pdf" target="_blank" className="px-5 py-3 rounded-full font-medium bg-gradient-to-r hover:bg-gradient-to-l from-[var(--accent-gradient1)] to-[var(--accent-gradient2)] text-[var(--accent-primary)] transition-all delay-500 duration-500">
+          <a href="/portfolio/Resume.pdf" target="_blank" className="px-5 py-3 rounded-full font-medium bg-gradient-to-r hover:bg-gradient-to-l from-[var(--accent-gradient1)] to-[var(--accent-gradient2)] text-[var(--accent-primary)] transition-all delay-500 duration-500">
             Download CV
           </a>
         </div>

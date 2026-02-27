@@ -30,7 +30,7 @@ const projects = [
     title: "Creative Portfolio Website",
     description: "A modern, animated portfolio site for BPO Agency.",
     image: project2,
-    link: "#"
+    link: "http://aslinfosystem.com/"
   },
 ];
 

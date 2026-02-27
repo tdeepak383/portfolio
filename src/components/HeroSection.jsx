@@ -1,5 +1,5 @@
 import React from "react";
-import deepakImg from '../assets/deepak.png'
+import deepakImg from '../assets/deepak-2.png'
 import dot from '../assets/icon-sub-heading.svg'
 import { GoPlay } from "react-icons/go";
 import { motion } from "framer-motion";

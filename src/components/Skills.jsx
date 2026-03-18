@@ -15,7 +15,9 @@ const skillsData = [
   { name: "Figma", level: 60 },
   { name: "Material UI", level: 70 },
   { name: "GSAP", level: 60 },
-  { name: "SEO", level: 80 },
+  { name: "SEO", level: 70 },
+  { name: "Wordpress", level: 80 },
+  { name: "AI Tools", level: 70 },
 ];
 
 function Skills() {

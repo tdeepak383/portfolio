@@ -19,6 +19,7 @@ function MovingStrip() {
     "Material UI",
     "GSAP",
     "SEO",
+    "Wordpress",
     "AI Tools",
     "Figma",
     "Github",

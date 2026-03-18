@@ -139,7 +139,7 @@ const HeroSection = () => {
           <motion.img
             src={deepakImg}
             alt="Deepak"
-            className="w-64 md:w-96 mx-auto border rounded-full border-[var(--accent-gradient1)]"
+            className="w-64 md:w-96 mx-auto"
             animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
             transition={{
               duration: 4,

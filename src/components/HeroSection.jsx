@@ -1,5 +1,5 @@
 import React from "react";
-import deepakImg from '../assets/deepak.png'
+import deepakImg from '../assets/deepak-2.png'
 import dot from '../assets/icon-sub-heading.svg'
 import { GoPlay } from "react-icons/go";
 import { motion } from "framer-motion";
@@ -101,10 +101,10 @@ const HeroSection = () => {
             variants={fadeUp}
             className="text-gray-300 mb-6"
           >
-            "Hi, I'm Deepak, a passionate Frontend Developer. I specialize in
+            I'm a passionate Frontend Developer. I specialize in
             building modern, responsive user interfaces with a focus on
-            performance, accessibility, and pixel-perfect precision—creating
-            seamless web experiences that blend design with technology."
+            performance, accessibility, and pixel-perfect precision - creating
+            seamless web experiences that blend design with technology.
           </motion.p>
 
           <motion.div

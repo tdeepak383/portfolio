@@ -75,7 +75,7 @@ const headingItem = {
           </motion.h2>
 
           <motion.p variants={headingItem} className="mb-12 max-w-xl">
-            Take a look at some of the design and development projects we've brought to life.
+            Take a look at some of the design and development projects
           </motion.p>
         </motion.div>
 
